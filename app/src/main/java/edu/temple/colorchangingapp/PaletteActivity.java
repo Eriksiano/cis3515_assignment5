@@ -20,6 +20,7 @@ public class PaletteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set the title of the activity to be Palette Activity instead of the app name
         getSupportActionBar().setTitle("Palette Activity");
 
         gridView = findViewById(R.id.gridView);
@@ -31,7 +32,7 @@ public class PaletteActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 startActivity(new Intent(PaletteActivity.this, CanvasActivity.class)
-                .putExtra(COLOR_KEY, parent.getItemIdAtPosition(position)));
+                .putExtra(COLOR_KEY, parent.getItemAtPosition(position).toString()));
             }
         });
 
